@@ -1,0 +1,75 @@
+{% extends 'layouts/base.html' %}
+
+ {% load static %}
+
+{% block content %}
+
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Rezervasyon</h2>
+          <ol>
+            <li><a href="/">Ana Sayfa</a></li>
+            <li><a href="/booktable">Rezervasyon</a></li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+        <!-- ======= Book A Table Section ======= -->
+    <section id="book-a-table" class="book-a-table">
+      <div class="container">
+
+        <div class="section-title">
+          <h2><span>Rezervasyon</span>Yap</h2>
+          <p>Rezervasyonunuzu tamamladıktan sonra size telefonla arayıp bilgi vereceğiz.</p>
+        </div>
+
+        <form action="{% url 'booktable' %} " method="POST" role="form" class="php-email-form">
+             {% csrf_token %}
+          <div class="form-row">
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="İsminiz" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="email" class="form-control" name="email" id="email" placeholder="E-Posta Adresiniz" data-rule="email" data-msg="Please enter a valid email">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="text" class="form-control" name="phone" id="phone" placeholder="Telefon" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="date" name="date" class="form-control" id="date" placeholder="Tarih" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="time" class="form-control" name="time" id="time" placeholder="Saat" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-lg-4 col-md-6 form-group">
+              <input type="number" class="form-control" min="1" max="10" name="people" id="people" placeholder="# kişi" data-rule="minlen:1" data-msg="Please enter at least 1 chars">
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+            <div class="validate"></div>
+          </div>
+          <div class="mb-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your booking request was sent. We will call back or send an Email to confirm your reservation. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Rezervasyon Yap</button></div>
+        </form>
+
+      </div>
+    </section><!-- End Book A Table Section -->
+
+
+
+{% endblock content %}

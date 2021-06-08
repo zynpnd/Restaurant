@@ -1,0 +1,56 @@
+{% extends 'layouts/base.html' %}
+
+ {% load static %}
+
+{% block content %}
+
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Şefler</h2>
+          <ol>
+            <li><a href="/">Ana Sayfa</a></li>
+            <li><a href="/chef">Şefler</a></li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+  <!-- ======= Chefs Section ======= -->
+    <section id="chefs" class="chefs">
+      <div class="container">
+
+        <div class="section-title">
+          <h2><span>Profesyonel Şeflerimiz</span></h2>
+
+        </div>
+
+        <div class="row">
+
+           {% for chefs in sef %}
+
+              <div class="col-lg-4 col-md-6">
+                <div class="member">
+                  <div class="pic"><img src="{{ chefs.image.url }}" class="img-fluid" alt=""></div>
+                  <div class="member-info">
+                    <h4>{{ chefs.name}}</h4>
+                    <span>{{ chefs.unvan }}</span>
+                        <div class="social">
+                          <a href="https://twitter.com/"   target="_blank"><i class="icofont-twitter"></i></a>
+                          <a href="https://facebook.com/"  target="_blank"><i class="icofont-facebook"></i></a>
+                          <a href="https://instagram.com/" target="_blank"><i class="icofont-instagram"></i></a>
+                          <a href="https://linkedin.com/"  target="_blank"><i class="icofont-linkedin"></i></a>
+                        </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+
+        </div>
+
+      </div>
+    </section><!-- End Chefs Section -->
+
+{% endblock content %}

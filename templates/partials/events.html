@@ -1,0 +1,52 @@
+{% extends 'layouts/base.html' %}
+
+ {% load static %}
+
+{% block content %}
+
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Etkinlikler</h2>
+          <ol>
+            <li><a href="/">Ana Sayfa</a></li>
+            <li><a href="/events">Etkinlikler</a></li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+     <!-- ======= Events Section ======= -->
+    <section id="events" class="events">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Etkinliklerinizi  <span>restoranımızda</span> düzenleyin</h2>
+        </div>
+
+        <div class="owl-carousel events-carousel">
+            {% for events in rezervasyon %}
+
+                  <div class="row event-item">
+                    <div class="col-lg-6">
+                      <img src="{{ events.image.url }}" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 content">
+                      <h3>{{ events.name }}</h3>
+                      <div class="price">
+                        <p><span>{{ events.price }} TL</span></p>
+                      </div>
+                      <p class="font-italic">
+                        {{ events.content }}
+                      </p>
+                    </div>
+                  </div>
+            {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Events Section -->
+
+{% endblock content %}

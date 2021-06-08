@@ -1,0 +1,77 @@
+{% extends 'layouts/base.html' %}
+
+ {% load static %}
+
+{% block content %}
+
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Iletişim</h2>
+          <ol>
+            <li><a href="/">Ana Sayfa</a></li>
+            <li><a href="/contact">İletişim</a></li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+     <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2><span>Iletişim</span></h2>
+          <p></p>
+        </div>
+      </div>
+
+      <div class="map">
+        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12599.033825846516!2d32.4200585!3d37.8659418!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x707045fe545b6c95!2sNecmettin%20Erbakan%20%C3%9Cniversitesi%20K%C3%B6yce%C4%9Fiz%20Yerle%C5%9Fkesi!5e0!3m2!1str!2str!4v1616280760085!5m2!1str!2str" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="container mt-5">
+
+        <div class="info-wrap">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 info">
+              <i class="icofont-google-map"></i>
+              <h4>Adres:</h4>
+              <p>Köyceğiz Mah. Demeç Sok. <br> No:42/A  Meram / KONYA</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+              <i class="icofont-clock-time icofont-rotate-90"></i>
+              <h4>Açık Saatler:</h4>
+              <p>Pazartesi-Pazar:<br>11:00 AM - 23:00 PM</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+              <i class="icofont-envelope"></i>
+              <h4>Email:</h4>
+              <p>info@django.com<br>contact@django.com</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+              <i class="icofont-phone"></i>
+              <h4>Telefon:</h4>
+              <p>0 512 345 67 89<br>0 512 345 67 90</p>
+            </div>
+          </div>
+        </div>
+
+          <div class="php-email-form">
+            <form action=" " method="POST">
+                {% csrf_token %}
+                 {{ form.as_p }}
+                <button type="submit" class="btn btn-success">
+                    Kaydet
+                </button>
+            </form>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+{% endblock content %}

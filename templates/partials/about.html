@@ -1,0 +1,78 @@
+{% extends 'layouts/base.html' %}
+
+ {% load static %}
+
+{% block content %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Hakkımızda</h2>
+          <ol>
+            <li><a href="/">Ana Sayfa</a></li>
+            <li><a href="/about">Hakkımızda</a></li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <section class="inner-page">
+      <div class="container">
+             <!-- ======= About Section ======= -->
+                <section id="about" class="about">
+                  <div class="container-fluid">
+
+                    <div class="row">
+                       {% for about in hakkimizda %}
+
+                              <div class="col-lg-5 align-items-stretch video-box" style="background-image: url({{ about.image.url }});">
+                              </div>
+                              <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch">
+                                <div class="content">
+                                  <h3>{{ about.name }}</h3>
+                                  <p>
+                                   {{ about.content }}
+                                  </p>
+                                </div>
+                              </div>
+                         {% endfor %}
+                    </div>
+
+                  </div>
+                </section>
+          <!-- End About Section -->
+
+           <!-- ======= Whu Us Section ======= -->
+                <section id="why-us" class="why-us">
+                  <div class="container">
+
+                    <div class="section-title">
+                      <h2>Neden <span>Bizim Restaurantımız</span></h2>
+                      <p>Eşsiz lezzetleri tadacağınız tadı damağınızda kalacak benzersiz lezzetler...</p>
+                    </div>
+
+                    <div class="row">
+
+                        {% for why in nedenbiz %}
+                          <div class="col-lg-4">
+                            <div class="box">
+                              <span>{{ why.id }}</span>
+                              <h4>{{ why.name}}</h4>
+                              <p>{{ why.content }}</p>
+                            </div>
+                          </div>
+
+                        {% endfor %}
+
+                    </div>
+                  </div>
+                </section>
+               <!-- End Whu Us Section -->
+      </div>
+    </section>
+  </main><!-- End #main -->
+{% endblock content %}

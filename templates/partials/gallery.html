@@ -1,0 +1,48 @@
+{% extends 'layouts/base.html' %}
+
+ {% load static %}
+
+{% block content %}
+
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>Galeri</h2>
+          <ol>
+            <li><a href="/">Ana Sayfa</a></li>
+            <li><a href="/gallery">Galeri</a></li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+ <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container-fluid">
+
+        <div class="section-title">
+          <h2>Sanal <span> Gezinti</span></h2>
+          <p>Resimlerimiz ile restaurantımızı sanal bir gezinitye çıkın.</p>
+        </div>
+
+        <div class="row no-gutters">
+
+            {% for gallery in resim %}
+             <div class="col-lg-3 col-md-4">
+                <div class="gallery-item">
+
+                  <a href="{{ gallery.image.url }}" class="venobox" data-gall="gallery-item">
+                    <img src="{{ gallery.image.url }}" alt="" class="img-fluid">
+                  </a>
+                </div>
+          </div>
+
+            {% endfor %}
+
+        </div>
+
+      </div>
+    </section><!-- End Gallery Section -->
+{% endblock content %}
