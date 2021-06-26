@@ -1,4 +1,4 @@
 # Restaurant
 Django ile yapılan restaurant projesi
 
-Projeye brach tıklayarak ulaşabilirsiniz.
+Projeye branch tıklayarak ulaşabilirsiniz.
